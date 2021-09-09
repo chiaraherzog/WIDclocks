@@ -1,0 +1,49 @@
+---
+title: "introduction"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{introduction}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+# General information
+
+The WID clocks are epigenetic clocks developed using methylation data from 859 cervical samples from healthy individuals. They were further analysed and validated in 1082 liquid-based cervical cytology samples and hundreds of publicly available datasets from different tissues [1].
+
+The WID general clock can be used to estimate the chronological age of a sample. We also provide a means to calculate (cervical) epithelial and immune-specific clocks (WID epithelial and WID immune clock, respectively). Our data show that the WID relative epithelial age (relative shift of the WID epithelial clock to the WID general clock) can indicate disease susceptibility, for instance in response to hormone exposure.
+
+The package calculates:
+
+* The WID general clock
+* WID epithelial clock 
+* WID immune clock
+* WID-relative-epithelial-age (WID epithelial-WID general clock)
+* WID-relative-immune-age (WID immune-WID general clock)
+
+The input is a beta methylation matrix, for instance derived after quality control and normalisation of data obtained from the Illumina MethylationEPIC or Illumina Methylation450k Array (caveat: not all WID clock CpGs are represented on the 450k array). The package requires the EpiDISH package for inference of the immune cell proportion.
+
+For downstream use of the WID-relative-epithelial-age and WID-relative-immune-age, we recommend adjustment for age and immune cell proportio in the sample using a suitable sample set (e.g., healthy controls) to remove any effects caused by different chronological age or immune composition of the sample. Immune composition can be inferred using the EpiDISH package.
+
+
+The use is as follows:
+
+`WID_clocks(beta)`
+
+In case breast tissue is analysed, use `tissue = 'breast'` in the function:
+
+`WID_clocks(beta, tissue = 'breast')`
+
+The tissue parameter defaults to NULL (all other tissues).
+
+# Reference
+
+[1] Barrett, J., Herzog., C., Kim, Y.-N., et al. (2021). "Susceptibility to hormone-mediated cancer is reflected by different tick rates of the epithelial and general epigenetic clock" (under revision)

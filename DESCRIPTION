@@ -1,0 +1,26 @@
+Package: WIDclocks
+Title: Easy Calculation Of Epigenetic WID Clocks
+Version: 1.0.0
+Authors@R: 
+    person(given = "Chiara",
+           family = "Herzog",
+           role = c("aut", "cre"),
+           email = "chiara.herzog@uibk.ac.at",
+           comment = c(ORCID = "0000-0002-1572-498X"))
+Description: This package uses Illumina EPIC or 450k Array data
+    to calculate the WID general, epithelial or immune clock in R. It depends on EpiDISH to infer
+    the immune composition of the sample. It also enables calculation of the WID-relative-epithelial-age
+    and WID-relative-immune-age.
+License: `use_mit_license()`
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+biocViews:
+Depends: 
+    EpiDISH,
+    R (>= 2.10)
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
