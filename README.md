@@ -1,4 +1,5 @@
 # WIDclocks
+
 Easy calculation of WID clocks (Barrett J., Herzog C. & Kim. Y.-N. et al., 2021).
 
 **Please note: this code is available for research use only. Commercial use of the code or any data related to it is prohibited.**
@@ -6,10 +7,17 @@ Easy calculation of WID clocks (Barrett J., Herzog C. & Kim. Y.-N. et al., 2021)
 THE WID_clocks function uses a methylation beta matrix and returns the WID general, epithelial and immune clocks.
 It also returns the WID-relative-epithelial-age (WID_rea) and WID-relative-immune-age (WID_ria) (∆WID epithelial or WID immune and WID general clock).
 
+# Installation
 
-Example use:
+```
+devtools::install_github("chiaraherzog/WIDclocks")
+```
 
-`res <- WID_clocks(beta_matrix)`
+# Use
+
+```
+res <- WID_clocks(beta_matrix)
+```
 
 ## Cell composition
 
